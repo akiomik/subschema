@@ -1,28 +1,23 @@
 subschema
 ====
 
-## Description
+## Install
+
+```bash
+go get -d github.com/akiomik/subschema
+go install
+```
 
 ## Usage
 
-## Install
+### Conversion
 
-To install, use `go get`:
+Convert a JSON Schema file into API Blueprint.
 
 ```bash
-$ go get -d github.com/Akiomi Kamakura/subschema
+subschema convert --format "apib" example.json > example.apib
 ```
-
-## Contribution
-
-1. Fork ([https://github.com/Akiomi Kamakura/subschema/fork](https://github.com/Akiomi Kamakura/subschema/fork))
-1. Create a feature branch
-1. Commit your changes
-1. Rebase your local changes against the master branch
-1. Run test suite with the `go test ./...` command and confirm that it passes
-1. Run `gofmt -s`
-1. Create new Pull Request
 
 ## Author
 
-[Akiomi Kamakura](https://github.com/Akiomi Kamakura)
+[Akiomi Kamakura](https://github.com/akiomik)

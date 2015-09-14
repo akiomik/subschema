@@ -1,0 +1,21 @@
+FORMAT: 1A
+
+# {{.Title}}
+{{.Description}}
+{{range $i, $Def := .Definitions}}
+# Group {{.Title}}
+{{.Description}}
+{{range $j, $Link := .Links}}
+## {{or $Def.Title (title $i)}} [{{if canFormat .HRef.String}}{{printf .HRef.String "{id}"}}{{else}}{{.HRef.String}}{{end}}]
+### {{.Title}} [{{.Method}}]
+{{.Description}}
+
+  + Request ({{or .EncType "application/json"}})
+
+  + Response {{statusCode .}} ({{or .MediaType "application/json"}})
+{{if (ne .MediaType "null")}}
+
+        {{body . $Def}}
+{{end}}
+{{end}}
+{{end}}
